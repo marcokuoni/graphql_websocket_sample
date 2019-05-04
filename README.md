@@ -18,6 +18,6 @@ Then install the package
 $ ./vendor/bin/concrete5 c5:package-install concrete5_graphql_websocket_sample
 ```
 
-After insallation of this package navigate to the /person single page. If you wanna have exact the same look and feel activate also the theme from this package.
+After insallation of this package refresh your entities /index.php/dashboard/system/environment/entities/view. If you wanna have exact the same look and feel activate also the theme from this package /index.php/dashboard/pages/themes. And then navigate to the /person single page. 
 
 ## To dos

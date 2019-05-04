@@ -1,6 +1,6 @@
 
 query {
-    person {
+    getPeople {
       first_name
       second_name
     }
