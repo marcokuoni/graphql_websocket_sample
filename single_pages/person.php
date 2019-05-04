@@ -11,7 +11,7 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
             showDebugInfos: true,
             productivMode: false,
             secureProtocol: '<?= $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? true : false ?>',
-            graphqlUrl: '<?= $_SERVER['HTTP_HOST'] . '/graphql' ?>',
+            graphqlUrl: '<?= $_SERVER['HTTP_HOST'] . '/index.php/graphql' ?>',
             websocketUrl: '<?= $_SERVER['HTTP_HOST'] . '/wss2/' ?>',
         });
         window.person.initModule();

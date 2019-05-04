@@ -9,6 +9,7 @@ use AssetList;
 use Page;
 use SinglePage;
 use Database;
+use PageTheme;
 use Concrete\Core\Database\EntityManager\Provider\ProviderAggregateInterface;
 use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 
@@ -78,15 +79,15 @@ class Controller extends Package
 
     private static function addTheme($pkg)
     {
-        if (!is_object(PageTheme::getByHandle('concrete5_graphql_websocket_sample'))) {
-            PageTheme::add('concrete5_graphql_websocket_sample', $pkg);
+        if (!is_object(PageTheme::getByHandle('person'))) {
+            PageTheme::add('person', $pkg);
         }
     }
 
     private static function removeTheme($pkg)
     {
-        if (is_object(PageTheme::getByHandle('concrete5_graphql_websocket_sample'))) {
-            PageTheme::remove('concrete5_graphql_websocket_sample', $pkg);
+        if (is_object(PageTheme::getByHandle('person'))) {
+            PageTheme::remove('person', $pkg);
         }
     }
 
