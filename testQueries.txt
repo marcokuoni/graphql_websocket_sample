@@ -1,0 +1,19 @@
+
+query {
+    person {
+      first_name
+      second_name
+    }
+  }
+
+  subscription newPerson {
+  newPerson {
+    first_name
+  }
+}	
+
+mutation{
+  addPerson(id: 1, first_name: "f") {
+    first_name
+  }
+}

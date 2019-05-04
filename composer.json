@@ -1,0 +1,16 @@
+{
+    "name": "lemonbrain/concrete5_graphql_websocket_sample",
+    "description": "GraphQL and websocket sample package that is installable via composer for concrete 5",
+    "type": "concrete5-package",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "concrete5/core": "^8.5.1",
+        "lemonbrain/concrete5_graphql_websocket": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Custom\\Space\\": "src"
+        }
+    }
+}

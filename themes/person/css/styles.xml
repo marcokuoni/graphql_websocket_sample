@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<styles version="1.0">
+    <set name="Text">
+        <style name="Heading 1" variable="h1" type="type" />
+        <style name="Heading 2" variable="h2" type="type" />
+        <style name="Heading 3" variable="h3" type="type" />
+        <style name="Heading 4" variable="h4" type="type" />
+        <style name="Heading 5" variable="h5" type="type" />
+        <style name="Heading 6" variable="h6" type="type" />
+        <style name="Text" variable="p" type="type" />
+        <style name="Links" variable="a" type="type" />
+        <style name="Links Hover" variable="a-hover" type="type" />
+        <style name="Lead" variable="lead" type="type" />
+        <style name="Small" variable="small" type="type" />
+        <style name="Bold" variable="bold" type="type" />
+    </set>
+</styles>

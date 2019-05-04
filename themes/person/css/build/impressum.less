@@ -1,0 +1,29 @@
+.impressum-container {
+	padding-bottom: @space;
+
+	h1 {
+		margin: 0;
+	}
+
+	h2 {
+		text-align: left;
+	}
+
+	.left-side {
+		margin-top: 152px;
+
+		@media (max-width: @screen-sm-max) {
+			margin-top: 103px;
+		}
+		@media (max-width: @screen-xs-max) {
+			margin-top: @space;
+		}
+	}
+	.right-side {
+		margin-top: @space;
+	}
+
+	a, a:visited, a:focus, a:active, a:hover {
+		text-decoration: none;
+	}
+}

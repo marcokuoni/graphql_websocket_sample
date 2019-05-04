@@ -1,0 +1,240 @@
+h1, .h1-style {
+    font-family: @h1-type-font-family;
+    color: @h1-type-font-color;
+    font-weight: @h1-type-font-weight;
+    font-size: @h1-type-font-size;
+
+    margin-bottom: @space;
+    text-align: left;
+}
+
+h2, .h2-style {
+    font-family: @h2-type-font-family;
+    color: @h2-type-font-color;
+    font-weight: @h2-type-font-weight;
+    font-size: @h2-type-font-size;
+
+    margin-bottom: @space;
+    text-align: left;
+}
+
+h3, .h3-style {
+    font-family: @h3-type-font-family;
+    color: @h3-type-font-color;
+    font-weight: @h3-type-font-weight;
+    font-size: @h3-type-font-size;
+
+    margin-top: @space;
+    margin-bottom: @space / 4;
+}
+
+h4, .h4-style {
+    font-family: @h4-type-font-family;
+    color: @h4-type-font-color;
+    font-weight: @h4-type-font-weight;
+    font-size: @h4-type-font-size;
+
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+h5, .h5-style {
+    font-family: @h5-type-font-family;
+    color: @h5-type-font-color;
+    font-weight: @h5-type-font-weight;
+    font-size: @h5-type-font-size;
+
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+h6, .h6-style {
+    font-family: @h6-type-font-family;
+    color: @h6-type-font-color;
+    font-weight: @h6-type-font-weight;
+    font-size: @h6-type-font-size;
+
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+p, address, label,
+blockquote {
+    font-family: @p-type-font-family;
+    color: @p-type-font-color;
+    font-weight: @p-type-font-weight;
+    font-size: @p-type-font-size;
+    margin-bottom: @space / 2;
+    line-height: 1.3;
+}
+
+.lead {
+    margin-bottom: @space / 2;
+}
+
+.lead, .lead * {
+    font-family: @lead-type-font-family;
+    font-weight: @lead-type-font-weight;
+    font-size: @lead-type-font-size;
+    line-height: 1.5;
+
+    a, a:visited, a:focus, a:active, a:hover {
+        font-family: @lead-type-font-family;
+        font-weight: @lead-type-font-weight;
+        font-size: @lead-type-font-size;
+        line-height: 1.5;
+    }
+}
+
+.small, small {
+    font-family: @small-type-font-family;
+    font-weight: @small-type-font-weight;
+    font-size: @small-type-font-size;
+    margin-bottom: @space;
+    line-height: 1.2;
+
+    a, a:visited, a:focus, a:active, a:hover {
+        font-family: @small-type-font-family;
+        font-weight: @small-type-font-weight;
+        font-size: @small-type-font-size;
+        line-height: 1.2;
+    }
+}
+
+.bold, strong {
+    font-family: @bold-type-font-family;
+    font-weight: @bold-type-font-weight;
+
+    a, a:visited, a:focus, a:active, a:hover {
+        font-family: @bold-type-font-family;
+        font-weight: @bold-type-font-weight;
+    }
+}
+
+ul {
+    padding-left: 12px;
+
+    @media (max-width: @screen-xs-max) {
+        padding-left: 7px;
+    }
+}
+
+ul, li {
+    font-family: @p-type-font-family;
+    color: @p-type-font-color;
+    font-weight: @p-type-font-weight;
+    font-size: @p-type-font-size;
+    line-height: 1.4;
+}
+
+a, a:visited, a:focus, a:active {
+    font-family: @a-type-font-family;
+    color: @a-type-font-color;
+    font-weight: @a-type-font-weight;
+    font-size: @a-type-font-size;
+    text-decoration: underline;
+    outline: 0 none!important;
+    line-height: 1.4;
+}
+
+a:hover, a.active {
+    font-family: @a-hover-type-font-family;
+    color: @a-hover-type-font-color;
+    font-weight: @a-hover-type-font-weight;
+    font-size: @a-hover-type-font-size;
+    text-decoration: underline;
+    outline: 0 none!important;
+    line-height: 1.4;
+}
+
+input, textarea {
+    font-family: @p-type-font-family;
+    color: @p-type-font-color;
+    font-weight: @p-type-font-weight;
+    font-size: @p-type-font-size;
+    line-height: 1.4;
+}
+
+input::-webkit-input-placeholder,
+input::-ms-input-placeholder, input::-moz-placeholder,
+input:-moz-placeholder, input:-ms-input-placeholder, 
+textarea::-webkit-input-placeholder,
+textarea::-ms-input-placeholder, textarea::-moz-placeholder,
+textarea:-moz-placeholder, textarea:-ms-input-placeholder {
+    font-family: @p-type-font-family;
+}
+
+@media (max-width: @screen-sm-max) {
+    h1, .h1-style {
+        font-size: @h1-type-font-size;
+
+        margin-bottom: @space / 2;
+    }
+
+    h2, .h2-style {
+        font-size: @h2-type-font-size;
+
+        margin-bottom: @space / 2;
+    }
+
+    h3, .h3-style {
+        font-size: @h3-type-font-size;
+
+        margin-top: @space / 2;
+        margin-bottom: @space / 8;
+    }
+
+    h4, .h4-style {
+        font-size: @h4-type-font-size;
+
+        margin-bottom: @space / 4;
+    }
+
+    h5, .h5-style {
+        font-size: @h5-type-font-size;
+
+        margin-bottom: @space / 4;
+    }
+
+    h6, .h6-style {
+        font-size: @h6-type-font-size;
+
+        margin-bottom: @space / 4;
+    }
+
+    p, address, label,
+    blockquote {
+        font-size: @p-type-font-size;
+        margin-bottom: @space / 4;
+        line-height: 1.4;
+    }
+
+    .lead {
+        font-size: @lead-type-font-size;
+        margin-bottom: @space / 4;
+
+        a, a:visited, a:focus, a:active, a:hover {
+            font-size: @lead-type-font-size;
+        }
+    }
+
+    ul, li {
+        font-size: @p-type-font-size;
+        line-height: 1.4;
+    }
+
+    a, a:visited, a:focus, a:active {
+        font-size: @a-type-font-size;
+        line-height: 1.4;
+    }
+
+    a:hover, a.active {
+        font-size: @a-hover-type-font-size;
+        line-height: 1.4;
+    }
+
+    input, textarea {
+        font-size: @p-type-font-size;
+        line-height: 1.4;
+    }
+}

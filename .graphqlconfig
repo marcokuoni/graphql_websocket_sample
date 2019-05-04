@@ -1,0 +1,19 @@
+{
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "dev": {
+        "url": "http://concrete5.localhost/graphql",
+        "subscription": {
+          "url": "ws://concrete5.localhost/wss2/"
+        }
+      },
+      "prod": {
+        "url": "https://concrete5.lemonbrain.ch/graphql",
+        "subscription": {
+          "url": "wss://concrete5.lemonbrain.ch/wss2/"
+        }
+      }
+    }
+  }
+}

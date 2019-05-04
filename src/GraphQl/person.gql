@@ -1,0 +1,18 @@
+type Person {
+    id: Int
+    first_name: String
+    second_name: String
+}
+
+type Query {
+    getPeople: [Person]
+}
+
+type Mutation {
+    addPerson(first_name: String, second_name: String): Person
+    editPerson(id: Int, first_name: String, second_name: String): Person
+}
+
+type Subscription {
+    personEdited: Person
+}

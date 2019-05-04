@@ -1,0 +1,2 @@
+cd path-to/packages/concrete5_graphql_websocket_sample
+npx webpack --watch
