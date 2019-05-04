@@ -72,7 +72,6 @@ class Controller extends Package
     public function uninstall()
     {
         $this->removeSinglePage('/person');
-        self::removeTheme($this->pkg);
 
         parent::uninstall();
     }
@@ -81,13 +80,6 @@ class Controller extends Package
     {
         if (!is_object(PageTheme::getByHandle('person'))) {
             PageTheme::add('person', $pkg);
-        }
-    }
-
-    private static function removeTheme($pkg)
-    {
-        if (is_object(PageTheme::getByHandle('person'))) {
-            PageTheme::remove('person', $pkg);
         }
     }
 
