@@ -1,7 +1,7 @@
 {
-  "name": "lemonbrain_webshop",
+  "name": "graphql_websocket_sample",
   "version": "1.0.1",
-  "description": "This is the new amazing lemonbrain webshop",
+  "description": "This is the new amazing graphql websocket sample",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",

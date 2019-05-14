@@ -19,6 +19,7 @@ Then install npm requirements
 
 ```sh
 $ cd ./public/packages/concrete5_graphql_websocket_sample
+$ npm install
 $ npx webpack --watch
 ```
 
