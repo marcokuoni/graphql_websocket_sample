@@ -15,17 +15,17 @@ To install this package on a [composer based concrete5](https://github.com/concr
 $ composer require lemonbrain/concrete5_graphql_websocket_sample
 ```
 
-Then install the package on Concrete5
-
-```sh
-$ ./vendor/bin/concrete5 c5:package-install concrete5_graphql_websocket_sample
-```
-
 Then install npm requirements
 
 ```sh
 $ cd ./public/packages/concrete5_graphql_websocket_sample
 $ npx webpack --watch
+```
+
+Then install the package on Concrete5
+
+```sh
+$ ./vendor/bin/concrete5 c5:package-install concrete5_graphql_websocket_sample
 ```
 
 After insallation of this package refresh your entities /index.php/dashboard/system/environment/entities/view. If you wanna have exact the same look and feel activate also the theme from this package /index.php/dashboard/pages/themes. And then navigate to the /person single page. If you wanna use the websocket servers, do not forget the apache [settings](https://github.com/lemonbrain-mk/graphql_websocket/wiki/2.-Apache) and activate it /index.php/dashboard/system/environment/graphql
