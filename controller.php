@@ -15,9 +15,16 @@ use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 
 class Controller extends Package
 {
-
+    /**
+     * {@inheritdoc}
+     *
+     * @see \Concrete\Core\Package\Package::$packageDependencies
+     */
+    protected $packageDependencies = [
+        'concrete5_graphql_websocket' => '1.2.0'
+    ];
     protected $appVersionRequired = '8.5.1';
-    protected $pkgVersion = '1.0.3';
+    protected $pkgVersion = '1.1.0';
     protected $pkgHandle = 'concrete5_graphql_websocket_sample';
     protected $pkgName = 'GraphQL with Websocket Sample';
     protected $pkgDescription = 'Shows how to use GraphQL and Websocket in Concrete5';
