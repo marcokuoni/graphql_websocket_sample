@@ -1,16 +1,13 @@
 <?php
 namespace Concrete\Package\Concrete5GraphqlWebsocketSample;
 
-use Concrete\Core\Http\ServerInterface;
 use Concrete\Core\Package\Package;
-use Custom\Space\Middleware;
 use Asset;
 use AssetList;
 use Page;
 use SinglePage;
 use Database;
 use PageTheme;
-use Concrete\Core\Database\EntityManager\Provider\ProviderAggregateInterface;
 use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 
 class Controller extends Package
@@ -45,12 +42,6 @@ class Controller extends Package
 
     public function on_start()
     {
-        // Extend the ServerInterface binding so that when concrete5 creates the http server we can add our middleware
-        $this->app->extend(ServerInterface::class, function(ServerInterface $server) {
-            // Add our custom middleware
-            return $server->addMiddleware($this->app->make(Middleware::class));
-        });
-
         $al = AssetList::getInstance();
         $al->register('javascript', 'person', 'js/dist/person.js', array('position' => Asset::ASSET_POSITION_FOOTER, 'minify' => false, 'combine' => true), $this);
 
