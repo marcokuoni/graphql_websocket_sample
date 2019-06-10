@@ -6,7 +6,7 @@
     "minimum-stability": "stable",
     "require": {
         "concrete5/core": "^8.5.1",
-        "lemonbrain/concrete5_graphql_websocket": "^1.2.0"
+        "lemonbrain/concrete5_graphql_websocket": "^1.2.3"
     },
     "autoload": {
         "psr-4": {
