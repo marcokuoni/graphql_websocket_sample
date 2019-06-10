@@ -2,7 +2,7 @@
 namespace GraphQl;
 
 use GraphQl\PersonResolver;
-use Concrete5GraphqlWebsocket\GraphQl\SchemaBuilder;
+use Concrete5GraphqlWebsocket\SchemaBuilder;
 
 class TestGraphQl
 {
