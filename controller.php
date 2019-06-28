@@ -6,7 +6,8 @@ use Asset;
 use AssetList;
 use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 use Concrete\Core\Package\Package;
-use Database;
+use Doctrine\ORM\EntityManagerInterface;
+use Entity\Person;
 
 class Controller extends Package
 {
@@ -50,14 +51,14 @@ class Controller extends Package
     {
         parent::install();
         $this->installXML();
-        self::addSampleData();
+        $this->addSampleData();
     }
 
     public function upgrade()
     {
         parent::upgrade();
         $this->installXML();
-        self::addSampleData();
+        $this->addSampleData();
     }
 
     private function installXML()
@@ -65,40 +66,28 @@ class Controller extends Package
         $this->installContentFile('config/install.xml');
     }
 
-    private static function addSampleData()
+    private function addSampleData()
     {
-        $entityManager = Database::connection()->getEntityManager();
+        $entityManager = $this->app->make(EntityManagerInterface::class);
+        $personRepository = $entityManager->getRepository(Person::class);
 
-        $item = $entityManager->getRepository('\Entity\Person')
-            ->findOneBy(['first_name' => 'Fritz']);
-
-        if (is_object($item) && $item->get_id() > 0) {
-            $item = $entityManager->find('Entity\Person', $item->get_id());
-        } else {
-            $item = new \Entity\Person();
+        if ($personRepository->findOneBy(['first_name' => 'Fritz']) === null) {
+            $item = new Person();
+            $item->setData([
+                'first_name' => 'Fritz',
+                'second_name' => 'Muster',
+            ]);
+            $entityManager->persist($item);
         }
 
-        $item->setData([
-            'first_name' => 'Fritz',
-            'second_name' => 'Muster',
-        ]);
-        $entityManager->persist($item);
-
-        $item = $entityManager->getRepository('\Entity\Person')
-            ->findOneBy(['first_name' => 'Franz']);
-
-        if (is_object($item) && $item->get_id() > 0) {
-            $item = $entityManager->find('Entity\Person', $item->get_id());
-        } else {
-            $item = new \Entity\Person();
+        if ($personRepository->findOneBy(['first_name' => 'Franz']) === null) {
+            $item = new Person();
+            $item->setData([
+                'first_name' => 'Franz',
+                'second_name' => 'Kanns',
+            ]);
+            $entityManager->persist($item);
         }
-
-        $item->setData([
-            'first_name' => 'Franz',
-            'second_name' => 'Kanns',
-        ]);
-
-        $entityManager->persist($item);
         $entityManager->flush();
     }
 }
