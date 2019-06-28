@@ -2,18 +2,34 @@
 
 namespace GraphQl;
 
-use Database;
+use Doctrine\ORM\EntityManagerInterface;
+use Entity\Person;
 use Siler\GraphQL as SilerGraphQL;
 
 class PersonResolver
 {
-    public static function get()
+    /**
+     * @var \Doctrine\ORM\EntityManagerInterface
+     */
+    protected $entityManager;
+
+    /**
+     * @param \Doctrine\ORM\EntityManagerInterface $entityManager
+     */
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * @return array
+     */
+    public function get()
     {
         $queryType = [
             'getPeople' => function () {
-                $entityManager = Database::connection()->getEntityManager();
-                $people = $entityManager->getRepository('\Entity\Person')
-                    ->findAll();
+                $peopleRepository = $this->entityManager->getRepository(Person::class);
+                $people = $peopleRepository->findAll();
 
                 return json_decode(json_encode($people));
             },
@@ -21,31 +37,29 @@ class PersonResolver
 
         $mutationType = [
             'addPerson' => function ($root, $args) {
-                $entityManager = Database::connection()->getEntityManager();
                 $first_name = $args['first_name'];
                 $second_name = $args['second_name'];
 
-                $person = new \Entity\Person();
+                $person = new Person();
                 $person->set_first_name($first_name);
                 $person->set_second_name($second_name);
-                $entityManager->persist($person);
-                $entityManager->flush();
+                $this->entityManager->persist($person);
+                $this->entityManager->flush();
 
                 SilerGraphQL\publish('personEdited', json_decode(json_encode($person)));
 
                 return json_decode(json_encode($person));
             },
             'editPerson' => function ($root, $args) {
-                $entityManager = Database::connection()->getEntityManager();
                 $id = (int) ($args['id']);
                 $first_name = $args['first_name'];
                 $second_name = $args['second_name'];
 
-                $person = $entityManager->find('Entity\Person', $id);
+                $person = $this->entityManager->find(Person::class, $id);
                 $person->set_first_name($first_name);
                 $person->set_second_name($second_name);
-                $entityManager->persist($person);
-                $entityManager->flush();
+                $this->entityManager->persist($person);
+                $this->entityManager->flush();
 
                 SilerGraphQL\publish('personEdited', json_decode(json_encode($person)));
 

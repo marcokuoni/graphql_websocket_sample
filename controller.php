@@ -44,8 +44,7 @@ class Controller extends Package
     {
         $al = AssetList::getInstance();
         $al->register('javascript', 'person', 'js/dist/person.js', ['position' => Asset::ASSET_POSITION_FOOTER, 'minify' => false, 'combine' => true], $this);
-
-        TestGraphQl::start();
+        $this->app->make(TestGraphQl::class)->start();
     }
 
     public function install()
