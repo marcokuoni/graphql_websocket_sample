@@ -1,8 +1,9 @@
 <?php
+
 namespace GraphQl;
 
-use Siler\GraphQL as SilerGraphQL;
 use Database;
+use Siler\GraphQL as SilerGraphQL;
 
 class PersonResolver
 {
@@ -13,6 +14,7 @@ class PersonResolver
                 $entityManager = Database::connection()->getEntityManager();
                 $people = $entityManager->getRepository('\Entity\Person')
                     ->findAll();
+
                 return json_decode(json_encode($people));
             },
         ];
@@ -35,7 +37,7 @@ class PersonResolver
             },
             'editPerson' => function ($root, $args) {
                 $entityManager = Database::connection()->getEntityManager();
-                $id = (int)($args['id']);
+                $id = (int) ($args['id']);
                 $first_name = $args['first_name'];
                 $second_name = $args['second_name'];
 
@@ -58,7 +60,7 @@ class PersonResolver
         ];
 
         return [
-            'Query'    => $queryType,
+            'Query' => $queryType,
             'Mutation' => $mutationType,
             'Subscription' => $subscriptionType,
         ];

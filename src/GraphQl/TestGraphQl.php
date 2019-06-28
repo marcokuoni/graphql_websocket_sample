@@ -1,7 +1,7 @@
 <?php
+
 namespace GraphQl;
 
-use GraphQl\PersonResolver;
 use Concrete5GraphqlWebsocket\SchemaBuilder;
 
 class TestGraphQl
