@@ -17,7 +17,7 @@ class Controller extends Package
      * @see \Concrete\Core\Package\Package::$packageDependencies
      */
     protected $packageDependencies = [
-        'concrete5_graphql_websocket' => '1.2.3',
+        'concrete5_graphql_websocket' => '1.2.9',
     ];
     protected $appVersionRequired = '8.5.1';
     protected $pkgVersion = '1.1.4';
