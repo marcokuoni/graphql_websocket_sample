@@ -7,9 +7,6 @@ use AssetList;
 use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 use Concrete\Core\Package\Package;
 use Database;
-use Page;
-use PageTheme;
-use SinglePage;
 
 class Controller extends Package
 {
@@ -51,35 +48,21 @@ class Controller extends Package
 
     public function install()
     {
-        $this->pkg = parent::install();
+        parent::install();
+        $this->installXML();
         self::addSampleData();
-        self::installSinglePage('/person', $this->pkg);
-        self::addTheme($this->pkg);
     }
 
     public function upgrade()
     {
-        $this->pkg = parent::upgrade();
-
+        parent::upgrade();
+        $this->installXML();
         self::addSampleData();
-        self::installSinglePage('/person', $this->pkg);
-        self::addTheme($this->pkg);
-
-        return $this->pkg;
     }
 
-    public function uninstall()
+    private function installXML()
     {
-        $this->removeSinglePage('/person');
-
-        parent::uninstall();
-    }
-
-    private static function addTheme($pkg)
-    {
-        if (!is_object(PageTheme::getByHandle('person'))) {
-            PageTheme::add('person', $pkg);
-        }
+        $this->installContentFile('config/install.xml');
     }
 
     private static function addSampleData()
@@ -117,20 +100,5 @@ class Controller extends Package
 
         $entityManager->persist($item);
         $entityManager->flush();
-    }
-
-    private static function installSinglePage($path, $pkg)
-    {
-        $page = Page::getByPath($path);
-        if (!is_object($page) || $page->isError()) {
-            SinglePage::add($path, $pkg);
-        }
-    }
-
-    private function removeSinglePage($path) {
-        $singlePage = Page::getByPath($path);
-        if(is_object($singlePage) && (int) ($singlePage->getCollectionID())){
-            $singlePage->delete();
-        }
     }
 }
