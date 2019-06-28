@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 echo $this->inc('elements/header.php');
 ?>
@@ -10,12 +10,12 @@ echo $this->inc('elements/header.php');
 				<?php
 				View::element(
 					'system_errors',
-					array(
+					[
 						'format' => 'block',
 						'error' => isset($error) ? $error : null,
 						'success' => isset($success) ? $success : null,
 						'message' => isset($message) ? $message : null,
-					)
+					]
 				);
 				?>
 
@@ -31,4 +31,3 @@ echo $this->inc('elements/header.php');
 
 <?php
 echo $this->inc('elements/footer.php');
-

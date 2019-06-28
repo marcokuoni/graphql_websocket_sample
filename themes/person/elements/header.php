@@ -1,3 +1,3 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
+<?php defined('C5_EXECUTE') or die('Access Denied.');
 
-echo $this->inc('elements/header_top.php'); ?>
+echo $this->inc('elements/header_top.php');
