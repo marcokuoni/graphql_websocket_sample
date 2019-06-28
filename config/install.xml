@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+
+    <themes>
+        <theme package="concrete5_graphql_websocket_sample" handle="person" />
+    </themes>
+
+    <singlepages>
+        <page package="concrete5_graphql_websocket_sample" path="/person" name="Person" description="">
+        </page>
+    </singlepages>
+
+</concrete5-cif>
