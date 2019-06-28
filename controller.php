@@ -2,12 +2,13 @@
 
 namespace Concrete\Package\Concrete5GraphqlWebsocketSample;
 
-use Asset;
-use AssetList;
+use Concrete\Core\Asset\Asset;
+use Concrete\Core\Asset\AssetList;
 use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
 use Concrete\Core\Package\Package;
 use Doctrine\ORM\EntityManagerInterface;
 use Entity\Person;
+use GraphQl\TestGraphQl;
 
 class Controller extends Package
 {
@@ -44,7 +45,7 @@ class Controller extends Package
         $al = AssetList::getInstance();
         $al->register('javascript', 'person', 'js/dist/person.js', ['position' => Asset::ASSET_POSITION_FOOTER, 'minify' => false, 'combine' => true], $this);
 
-        \GraphQl\TestGraphQl::start();
+        TestGraphQl::start();
     }
 
     public function install()
